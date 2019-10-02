@@ -1,4 +1,4 @@
 <?php
-echo "Why did you click that when I asked you specifically not to?\n\n\n\n\n";
-echo '<img src="carrel.gif" alt="michael scott" style="width:600px;height:800px;">';
+echo "<h1>"."Why did you click that... when I asked you specifically not to?"."/h1>";
+echo '<img src="carrel.gif" alt="michael scott" style="width:300px;height:400px;">';
 ?>

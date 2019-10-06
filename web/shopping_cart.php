@@ -13,7 +13,7 @@ function addCart() {
      document.getElementById("cart").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "view_cart.php?cabbage_qty="+document.getElementById('cabbage_qty').value+
+  xhttp.open("POST", "view_cart.php?cabbage_qty="+document.getElementById('cabbage_qty').value+
                                    "carrot_qty="+document.getElementById('carrot_qty').value+
                                    "tomato_qty="+document.getElementById('carrot_qty').value+
                                    "lemon_qty="+document.getElementById('carrot_qty').value+

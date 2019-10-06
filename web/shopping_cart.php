@@ -7,7 +7,7 @@ session_start();
         <title>Shopping Cart - W03 Prove</title>
     </head>
 <body>
-<div class = "products">
+<form action = "cart_update.php" method = "GET">
 <table border = 5 bordercolor = black align = center>
     <th colspan = 14>Please Fill out Order Form:</th>
     <tr>
@@ -48,5 +48,7 @@ session_start();
         <td colspan = 4><img src="watermelon.jpg" alt="watermelon" border=3 height=100 width=100 align = center></img></td>
     </tr>
 </table>
+<button type = "submit">Submit</button>
+</form>
  </body>
 <html>

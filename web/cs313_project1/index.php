@@ -25,8 +25,8 @@ try
 	while ($row = $statement->fetch())
 	{
         echo $row['game_id']."\n";
-        echo $row['win']."\n";
-        echo $row['loss']."\n";
+        echo (($row['win']) ? "TRUE" : "FALSE")."\n";
+        echo (($row['loss']) ? "TRUE" : "FALSE")."\n";
         echo $row['input']."\n";
 	}
 }

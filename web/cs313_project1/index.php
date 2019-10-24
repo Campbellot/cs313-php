@@ -11,7 +11,7 @@
 // in each of our different PHP files.
 require("dbConnect.php");
 $db = get_db();
-var_dump($db);exit;
+// var_dump($db);exit;
 
 try
 {

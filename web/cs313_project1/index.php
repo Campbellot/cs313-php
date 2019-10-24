@@ -24,7 +24,7 @@ try
     
 	while ($row = $statement->fetch())
 	{
-		echo $row."\n";
+		var_dump($row);
 	}
 }
 catch (PDOException $ex)

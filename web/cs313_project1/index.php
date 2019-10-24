@@ -18,7 +18,7 @@ try
 	// Notice that we do not use "SELECT *" here. It is best practice
 	// to only bring back the fields that you need.
 	// prepare the statement
-	$statement = $db->prepare('SELECT *, FROM results');
+	$statement = $db->prepare('SELECT game_id, win, loss, input FROM results');
 	$statement->execute();
 	// Go through each result
 	while ($row = $statement->fetch())

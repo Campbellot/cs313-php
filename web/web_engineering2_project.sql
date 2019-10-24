@@ -23,3 +23,5 @@ CREATE DATABASE rock_paper_scissors;
     paper BOOLEAN NOT NULL,
     scissors BOOLEAN NOT NULL
   );
+INSERT INTO losses (loss, rock, paper, scissors)
+VALUES (TRUE, FALSE, FALSE, TRUE);

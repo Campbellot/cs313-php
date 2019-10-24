@@ -11,6 +11,7 @@
 // in each of our different PHP files.
 require("dbConnect.php");
 $db = get_db();
+var_dump($db);exit;
 
 try
 {
@@ -20,7 +21,7 @@ try
 	$statement = $db->prepare('SELECT *, FROM results');
 	$statement->execute();
 	// Go through each result
-	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+	while ($row = $statement->fetch())
 	{
 		var_dump($row);
 	}

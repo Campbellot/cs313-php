@@ -24,7 +24,10 @@ try
     
 	while ($row = $statement->fetch())
 	{
-		var_dump($row);
+        echo $row['game_id']."\n";
+        echo $row['win']."\n";
+        echo $row['loss']."\n";
+        echo $row['input']."\n";
 	}
 }
 catch (PDOException $ex)

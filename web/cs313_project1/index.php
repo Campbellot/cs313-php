@@ -18,13 +18,14 @@ try
 	// Notice that we do not use "SELECT *" here. It is best practice
 	// to only bring back the fields that you need.
 	// prepare the statement
-	$db->prepare('SELECT game_id, win, loss, input FROM results');
-	$db->execute();
+	$statement = $db->prepare('SELECT game_id, win, loss, input FROM results');
+	$statement->execute();
     // Go through each result
-    $row = $db->fetch();
-	foreach($row as $r){
-        echo $r."\n";
-    }
+    
+	while ($row = $statement->fetch())
+	{
+		echo $row."\n";
+	}
 }
 catch (PDOException $ex)
 {

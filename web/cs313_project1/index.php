@@ -55,9 +55,9 @@ $db = get_db();
 <form action="view.php" method="GET">
 <div class="flex-container">
   <div><h1>Select Your Choice:</h1></div>
-  <div><input type="submit" img src="images/rock.jpg" alt="rock"></div>
-  <div><input type="submit" img src="images/paper.jpg" alt="paper"></div>
-  <div><input type="submit" img src="images/scissors.jpg" alt="scissors"></div>
+  <div><input type="submit"><img src="images/rock.jpg" alt="rock"></div>
+  <div><input type="submit"><img src="images/paper.jpg" alt="paper"></div>
+  <div><input type="submit"><img src="images/scissors.jpg" alt="scissors"></div>
 </div>
 </form>
 </body>

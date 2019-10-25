@@ -45,7 +45,7 @@ $db = get_db();
   <meta charset="utf-8">
 
   <title>Rock, Paper, Scissors</title>
-
+  <link rel="shortcut icon" href="inages/loss.png">
   <link rel="stylesheet" href="style.css">
 
 </head>

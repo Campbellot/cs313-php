@@ -57,17 +57,17 @@ $db = get_db();
   <div><h1>Select Your Choice:</h1></div>
   <div>
     <a href="view.php?input=rock">
-        <img border="0" alt="rock" src="rock.jpg" width="100pt" height="100pt">
+        <img border="0" alt="rock" src="rock.jpg" width="100" height="100">
     </a>
   </div>
   <div>
     <a href="view.php?input=paper">
-        <img border="0" alt="paper" src="paper.jpg" width="100pt" height="100pt">
+        <img border="0" alt="paper" src="paper.jpg" width="100" height="100">
     </a>
   </div>
   <div>
     <a href="view.php?input=scissors">
-        <img border="0" alt="scissors" src="scissors.jpg" width="100pt" height="100pt">
+        <img border="0" alt="scissors" src="scissors.jpg" width="100" height="100">
     </a>
   </div>
 </div>

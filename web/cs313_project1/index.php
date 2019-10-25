@@ -51,7 +51,7 @@ $db = get_db();
 </head>
 
 <body>
-<script src="script.js"></script>
+<script src=""></script>
 <form action="view.php" method="GET">
 <div class="flex-container">
   <div><h1>Select Your Choice:</h1></div>

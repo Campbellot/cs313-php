@@ -32,7 +32,7 @@ catch (PDOException $ex)
 	echo "Error connecting to DB. Details: $ex";
 	die();
 }
-var_dump($result);exit;
+var_dump($result);
 $stat = $_GET['stat'];
 switch($stat){
     case "paper":

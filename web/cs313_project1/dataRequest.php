@@ -17,7 +17,7 @@ try
     
 	while ($row = $statement->fetch())
 	{
-        $result[$i] = (object)(
+        $result[$i] = (object)array(
             "game_id" => $row['game_id'];
             "win" => (($row['win']) ? TRUE : FALSE);
             "loss" => (($row['loss']) ? TRUE : FALSE);

@@ -45,14 +45,55 @@ $db = get_db();
   <meta charset="utf-8">
 
   <title>Rock, Paper, Scissors</title>
-  <link rel="shortcut icon" href="inages/loss.png">
+  <link rel="shortcut icon" href="images/loss.png">
   <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-<script src=""></script>
-<form action="view.php" method="GET">
+<script>
+  function PaperStats(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200)
+      document.getElementById("paper").innerHTML =
+      this.responseText;
+      };
+      
+      xhttp.open("GET", "dataRequest.php?stat=paper", true);
+    
+    xhttp.send();
+  }
+  
+  
+  function ScissorsStats(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200)
+      document.getElementById("scissors").innerHTML =
+      this.responseText;
+      };
+      
+      xhttp.open("GET", "dataRequest.php?stat=scissors", true);
+    
+    xhttp.send();
+      
+  }  
+
+  function RockStats(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200)
+      document.getElementById("rock").innerHTML =
+      this.responseText;
+      };
+      
+      xhttp.open("GET", "dataRequest.php?stat=rock", true);
+    
+    xhttp.send();
+
+  }
+  </script>
 <div class="flex-container">
   <div><h1>Select Your Choice:</h1></div>
   <div>
@@ -71,6 +112,24 @@ $db = get_db();
     </a>
   </div>
 </div>
-</form>
+
+<div class="flex-container">
+  <div>
+    <h1>Click below to see statistics on each choice:</h1>
+  </div>
+  <div>
+    <button onclick="PaperStats()">Paper Statistics</button>
+    <p id="paper"></p>
+  </div>
+  <div>
+    <button onclick="ScissorsStats()">Scissors Statistics</button>
+    <p id="scissors"></p>
+  </div>
+  <div>
+    <button onclick="RockStats()">Rock Statistics</button>
+    <p id="rock"></p>
+  </div>
+</div>
+
 </body>
 </html>

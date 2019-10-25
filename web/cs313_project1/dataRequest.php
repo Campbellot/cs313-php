@@ -17,12 +17,11 @@ try
     
 	while ($row = $statement->fetch())
 	{
-        $result[$i] = (object)array(
-            "game_id" => $row['game_id'];
-            "win" => (($row['win']) ? TRUE : FALSE);
-            "loss" => (($row['loss']) ? TRUE : FALSE);
-            "input" => $row['input']);
-        $i++;
+        
+            echo $row['game_id']."\n";
+            echo (($row['win']) ? TRUE : FALSE)."\n";
+            echo (($row['loss']) ? TRUE : FALSE)."\n";
+            echo $row['input'])."\n";
 	}
 }
 catch (PDOException $ex)

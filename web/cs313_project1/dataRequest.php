@@ -3,7 +3,7 @@
 
 require("dbConnect.php");
 $db = get_db();
-// var_dump($db);exit;
+var_dump($db);exit;
 $result = array();
 $i = 0;
 try

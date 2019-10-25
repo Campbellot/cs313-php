@@ -24,7 +24,7 @@ echo "<!DOCTYPE HTML>
   </div>
   <div>
     <h1>Your Choice:</h1>
-        <img border='0' alt='".$cpu_input."' src='images/".$cpu_input.".png' style='width:100;height:100px;'>
+        <img border='0' alt='".$opts[$cpu_input]."' src='images/".$opts[$cpu_input].".png' style='width:100;height:100px;'>
   </div>
 </div>
 </body>

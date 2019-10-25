@@ -1,3 +1,10 @@
+body {
+  background-image: url("images/arena.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: "750px";
+  background-attachment: fixed;
+}
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -12,4 +19,5 @@
     height: '100px';
     align-items: center;
   }
+  
   

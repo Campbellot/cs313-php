@@ -50,7 +50,7 @@ $db = get_db();
 
 </head>
 
-<body background = "images/arena.jpg";>
+<body>
 <script src=""></script>
 <form action="view.php" method="GET">
 <div class="flex-container">

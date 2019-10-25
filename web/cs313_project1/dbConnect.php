@@ -39,6 +39,7 @@ function get_db() {
 	}
 	return $db;
 }
+$db = $this->get_db();
 try
 {
 	// Notice that we do not use "SELECT *" here. It is best practice

@@ -1,6 +1,7 @@
 <?php
+echo "test";exit;
 
-function get_db() {
+// function get_db() {
 	$db = NULL;
 	try {
 		// default Heroku Postgres configuration URL
@@ -37,9 +38,9 @@ function get_db() {
 		echo "Error connecting to DB. Details: $ex";
 		die();
 	}
-	return $db;
-}
-$db = $this->get_db();
+// 	return $db;
+// }
+// $db = $this->get_db();
 try
 {
 	// Notice that we do not use "SELECT *" here. It is best practice

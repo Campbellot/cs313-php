@@ -1,12 +1,11 @@
 <?php
 require("dbConnect.php");
-$db = get_db();
+$db = get_db();echo "test";var_dump($db);exit;
 // $input = $_GET['input'];
 $opts = array('rock', 'paper', 'scissors');
 $key = array_rand($opts, 1);
 $cpu_input = $opts[$key];
 $result = "";
-$db = get_db();
 try
 {
 	// Notice that we do not use "SELECT *" here. It is best practice
@@ -31,7 +30,7 @@ catch (PDOException $ex)
 	// a production environment
 	echo "Error connecting to DB. Details: $ex";
 	die();
-}exit;
+}
 
 
 switch($input){

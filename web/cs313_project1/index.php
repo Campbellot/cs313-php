@@ -52,14 +52,17 @@ $db = get_db();
 
 <body>
 <script src="script.js"></script>
-<form action="view.php" method="GET">
+<!-- <form action="view.php" method="GET">
 <div class="flex-container">
   <div><h1>Select Your Choice:</h1></div>
   <div><input type="submit"text = "rock"><img src="images/rock.png" alt="rock"></div>
   <div><input type="submit"text = "paper"><img src="images/paper.png" alt="paper"></div>
   <div><input type="submit"text = "scissors"><img src="images/scissors.png" alt="scissors"></div>
 </div>
-</form>
+</form> -->
+<img src="images/rock.png" alt="rock">
+<img src="images/paper.png" alt="paper">
+<img src="images/scissors.png" alt="scissors">
 <canvas id="sakura"></canvas>
 <div class="btnbg">
 </div>

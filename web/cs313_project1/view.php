@@ -1,6 +1,6 @@
 <?php
-require("dbConnect.php");
-$db = get_db();
+// require("dbConnect.php");
+// $db = get_db();
 $input = $_GET['input'];
 $opts = array('rock', 'paper', 'scissors');
 $key = array_rand($opts, 1);

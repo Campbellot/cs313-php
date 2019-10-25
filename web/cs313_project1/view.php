@@ -20,10 +20,14 @@ echo "<!DOCTYPE HTML>
 <div class='flex-container2'>
   <div>
     <h1>Your Choice:</h1>
+  </div>
+  <div>
         <img border='0' alt='".$input."' src='images/".$input.".png' style='width:100;height:100px;'>
   </div>
   <div>
-    <h1>Your Choice:</h1>
+    <h1>CPU's Choice:</h1>
+  </div>
+  <div>
         <img border='0' alt='".$opts[$cpu_input]."' src='images/".$opts[$cpu_input].".png' style='width:100;height:100px;'>
   </div>
 </div>

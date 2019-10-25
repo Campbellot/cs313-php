@@ -193,6 +193,14 @@ float ellipse(vec2 p, vec2 o, vec2 r) {
 }
 
 void main(void) {
+    <!DOCTYPE HTML>
+
+<html lang="en">
+<img src="images/rock.png" alt="rock">
+<img src="images/paper.png" alt="paper">
+<img src="images/scissors.png" alt="scissors">
+</html>
+
     vec3 p = vec3(gl_PointCoord - vec2(0.5, 0.5), 0.0) * 2.0;
     vec3 d = vec3(0.0, 0.0, -1.0);
     float nd = normZ.z; //dot(-normZ, d);

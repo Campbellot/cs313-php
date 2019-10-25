@@ -39,3 +39,29 @@ function get_db() {
 	}
 	return $db;
 }
+try
+{
+	// Notice that we do not use "SELECT *" here. It is best practice
+	// to only bring back the fields that you need.
+	// prepare the statement
+	$statement = $db->prepare('SELECT game_id, win, loss, input FROM results');
+	$statement->execute();
+    // Go through each result
+    
+	while ($row = $statement->fetch())
+	{
+        
+            echo $row['game_id']."\n";
+            echo (($row['win']) ? TRUE : FALSE)."\n";
+            echo (($row['loss']) ? TRUE : FALSE)."\n";
+            echo $row['input'])."\n";
+	}
+}
+catch (PDOException $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error connecting to DB. Details: $ex";
+	die();
+}
+?>

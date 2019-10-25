@@ -56,11 +56,6 @@ $db = get_db();
 <div class="flex-container">
   <div><h1>Select Your Choice:</h1></div>
   <div>
-    <a href="view.php?input=rock">
-        <img border="0" alt="rock" src="images/rock.png" style="width:100;height:90px;">
-    </a>
-  </div>
-  <div>
     <a href="view.php?input=paper">
         <img border="0" alt="paper" src="images/paper.png" style="width:100;height:100px;">
     </a>
@@ -68,6 +63,11 @@ $db = get_db();
   <div>
     <a href="view.php?input=scissors">
         <img border="0" alt="scissors" src="images/scissors.png" style="width:100;height:80px;">
+    </a>
+  </div>
+  <div>
+    <a href="view.php?input=rock">
+        <img border="0" alt="rock" src="images/rock.png" style="width:100;height:90px;">
     </a>
   </div>
 </div>

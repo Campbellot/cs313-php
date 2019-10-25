@@ -6,7 +6,7 @@
     align-items: center;
   }
 .body {
-    background-image: "arena.jpg";
+    background-image: "images/arena.jpg";
   }
   .flex-container2 {
     display: flex;

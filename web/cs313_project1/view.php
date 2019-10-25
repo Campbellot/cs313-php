@@ -11,26 +11,26 @@ switch($input){
     case "rock":
     switch($cpu_input){
         case "rock":
-            $result = "<h1>It's a Tie! </h1><a href='index.php'><img border='0' alt='tie' src='images/tie.jpg' style='width:100;height:100px;'></a>";
+            $result = "<h1>It's a Tie! </h1><a href='index.php'><img border='0' alt='tie' src='images/tie.png' style='width:100;height:100px;'></a>";
         break;
         case "paper":
-            $result = "<h1>You Lose! </h1><a href='index.php'><img border='0' alt='try_again' src='images/try_again.jpg' style='width:100;height:100px;'></a>";
+            $result = "<h1>You Lose! </h1><a href='index.php'><img border='0' alt='loss' src='images/loss.png' style='width:100;height:100px;'></a>";
         break;
         case "scissors":
-            $result = "<h1>You Win! </h1><a href='index.php'><img border='0' alt='winner' src='images/winner.jpg' style='width:100;height:100px;'></a>";
+            $result = "<h1>You Win! </h1><a href='index.php'><img border='0' alt='win' src='images/win.png' style='width:100;height:100px;'></a>";
         break;    
     }
     break;
     case "paper":
     switch($cpu_input){
         case "rock":
-            $result = "<h1>You Win! </h1><a href='index.php'><img border='0' alt='winner' src='images/winner.jpg' style='width:100;height:100px;'></a>";
+            $result = "<h1>You Win! </h1><a href='index.php'><img border='0' alt='win' src='images/win.png' style='width:100;height:100px;'></a>";
         break;
         case "paper":
-            $result = "<h1>It's a Tie! </h1><a href='index.php'><img border='0' alt='tie' src='images/tie.jpg' style='width:100;height:100px;'></a>";
+            $result = "<h1>It's a Tie! </h1><a href='index.php'><img border='0' alt='tie' src='images/tie.png' style='width:100;height:100px;'></a>";
         break;
         case "scissors":
-            $result = "<h1>You Lose! </h1><a href='index.php'><img border='0' alt='try_again' src='images/try_again.jpg' style='width:100;height:100px;'></a>";
+            $result = "<h1>You Lose! </h1><a href='index.php'><img border='0' alt='loss' src='images/loss.png' style='width:100;height:100px;'></a>";
         break;
     
     }
@@ -38,13 +38,13 @@ switch($input){
     case "scissors":
     switch($cpu_input){
         case "rock":
-            $result = "<h1>You Lose! </h1><a href='index.php'><img border='0' alt='try_again' src='images/try_again.jpg' style='width:100;height:100px;'></a>";
+            $result = "<h1>You Lose! </h1><a href='index.php'><img border='0' alt='loss' src='images/loss.png' style='width:100;height:100px;'></a>";
         break;
         case "paper":
-            $result = "<h1>You Win! </h1><a href='index.php'><img border='0' alt='winner' src='images/winner.jpg' style='width:100;height:100px;'></a>";
+            $result = "<h1>You Win! </h1><a href='index.php'><img border='0' alt='win' src='images/win.png' style='width:100;height:100px;'></a>";
         break;
         case "scissors":
-            $result = "<h1>It's a Tie! </h1><a href='index.php'><img border='0' alt='tie' src='images/tie.jpg' style='width:100;height:100px;'></a>";
+            $result = "<h1>It's a Tie! </h1><a href='index.php'><img border='0' alt='tie' src='images/tie.png' style='width:100;height:100px;'></a>";
         break;
     
     }

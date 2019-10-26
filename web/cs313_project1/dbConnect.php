@@ -5,8 +5,8 @@ function get_db() {
 	$db = NULL;
 	try {
 		// default Heroku Postgres configuration URL
-		$dbUrl = getenv('postgres://anxgmrdmdjemto:d8e4d92756664667911844b63a456248b45087fc412d5c0a521290fabdf27093@ec2-174-129-231-25.compute-1.amazonaws.com:5432/d5pro0fne4ohnl');
-		if (!isset($dbUrl) || empty($dbUrl)) {
+		// $dbUrl = getenv('DATABASE_URL');
+		// if (!isset($dbUrl) || empty($dbUrl)) {
 			// example localhost configuration URL with user: "ta_user", password: "ta_pass"
 			// and a database called "scripture_ta"
 			$dbUrl = "postgres://anxgmrdmdjemto:d8e4d92756664667911844b63a456248b45087fc412d5c0a521290fabdf27093@ec2-174-129-231-25.compute-1.amazonaws.com:5432/d5pro0fne4ohnl";
@@ -38,18 +38,7 @@ function get_db() {
 		echo "Error connecting to DB. Details: $ex";
 		die();
 	}
-	$statement = $db->prepare('SELECT game_id, win, loss, input FROM results');
-	$statement->execute();
-    // Go through each result
-    
-	while ($row = $statement->fetch())
-	{
-        
-            echo $row['game_id']."\n";
-            echo (($row['win']) ? TRUE : FALSE)."\n";
-            echo (($row['loss']) ? TRUE : FALSE)."\n";
-            echo $row['input'])."\n";
-	}
-	// return $db;
+	var_dump($db);exit;
+	return $db;
 }
 ?>

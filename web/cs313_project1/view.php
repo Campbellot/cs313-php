@@ -1,6 +1,5 @@
 <?php
-// require("dbConnect.php");
-// $db = get_db();
+
 $input = $_GET['input'];
 $opts = array('rock', 'paper', 'scissors');
 $key = array_rand($opts, 1);
@@ -66,7 +65,7 @@ echo "<!DOCTYPE HTML>
 </head>
 
 <body>
-<div class='flex-container'>
+<div class='flex-container2'>
   <div>
     <h1>Your Choice:</h1>
   </div>

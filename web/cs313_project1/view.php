@@ -73,7 +73,7 @@ switch($input){
     break;
 }
 
-$link = "index.php?stat=insert&input=".$input."&outcome=".$outcome;
+// $link = "index.php?stat=insert&input=".$input."&outcome=".$outcome;
 echo "<!DOCTYPE HTML>
 
 <html lang='en'>

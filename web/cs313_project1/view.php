@@ -30,8 +30,8 @@ function insertDB($input, $outcome){
         echo "Error with DB. Details: $ex";
         die();
     }
-    header("Location: rps_index.html");
-    die();
+    // header("Location: rps_index.html");
+    // die();
 
 }
 

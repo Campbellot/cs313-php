@@ -104,7 +104,7 @@ echo "<!DOCTYPE HTML>
 </div>
 
 <footer>
-    <a href='index.php?stat=insert&input=".$input."&cpu_input=".$cpu_input."&outcome=".$outcome'>
+    <a href='index.php?stat=insert&input=".$input."&cpu_input=".$cpu_input."&outcome=".$outcome.'>
         <img border="0" alt="insert" src="images/insert.png" style="width:250px;height:250px;">
     </a>
 </footer>

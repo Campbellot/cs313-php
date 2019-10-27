@@ -38,7 +38,7 @@ function get_db() {
 		echo "Error connecting to DB. Details: $ex";
 		die();
 	}
-	var_dump($db);exit;
+	// var_dump($db);exit;
 	return $db;
 }
 ?>

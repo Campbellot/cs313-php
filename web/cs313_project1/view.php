@@ -4,8 +4,9 @@ $input = $_GET['input'];
 $opts = array('rock', 'paper', 'scissors');
 $key = array_rand($opts, 1);
 $cpu_input = $opts[$key];
-$result = "";
+$result = ""; 
 $bod_class = "";
+$outcome = "";
 
 
 switch($input){
@@ -14,15 +15,19 @@ switch($input){
         case "rock":
             $result = "<div><h1>It's a Tie! </h1></div><div><a href='rps_index.html'><img border='0' alt='tie' src='images/tie.png' style='width:100px;height:250px;'></a></div>";
             $bod_class = "body4";
+            $outcome = "tie";
         break;
         case "paper":
             $result = "<div><h1>You Lose! </h1></div><div><a href='rps_index.html'><img border='0' alt='loss' src='images/loss.png' style='width:250px;height:250px;'></a></div>";
             $bod_class = "body3";
+            $outcome = "loss";
         break;
         case "scissors":
             $result = "<div><h1>You Win! </h1></div><div><a href='rps_index.html'><img border='0' alt='win' src='images/win.png' style='width:150px;height:250px;'></a></div>";
             $bod_class = "body2";
+            $outcome = "win"
         break;    
+
     }
     break;
     case "paper":
@@ -30,14 +35,17 @@ switch($input){
         case "rock":
             $result = "<div><h1>You Win! </h1></div><div><a href='rps_index.html'><img border='0' alt='win' src='images/win.png' style='width:150px;height:250px;'></a></div>";
             $bod_class = "body2";
-        break;
+            $outcome = "win"; 
+        break; 
         case "paper":
             $result = "<div><h1>It's a Tie! </h1></div><div><a href='rps_index.html'><img border='0' alt='tie' src='images/tie.png' style='width:100px;height:250px;'></a></div>";
             $bod_class = "body4";
+            $outcome = "tie";
         break;
         case "scissors":
             $result = "<div><h1>You Lose! </h1></div><div><a href='rps_index.html'><img border='0' alt='loss' src='images/loss.png' style='width:250px;height:250px;'></a></div>";
             $bod_class = "body3";
+            $outcome = "loss";
         break;
     
     }
@@ -47,14 +55,18 @@ switch($input){
         case "rock":
             $result = "<div><h1>You Lose! </h1></div><div><a href='rps_index.html'><img class='center' border='0' alt='loss' src='images/loss.png' style='width:250px;height:250px;'></a></div>";
             $bod_class = "body3";
+            $outcome = "loss";
+            
         break;
         case "paper":
             $result = "<div><h1>You Win! </h1></div><div><a href='rps_index.html'><img class='center' border='0' alt='win' src='images/win.png' style='width:150px;height:250px;'></a></div>";
             $bod_class = "body2";
+            $outcome = "win";
         break;
         case "scissors":
             $result = "<div><h1>It's a Tie! </h1></div><div><a href='rps_index.html'><img class='center' border='0' alt='tie' src='images/tie.png' style='width:100px;height:250px;'></a></div>";
             $bod_class = "body4";
+            $outcome = "tie";
         break;
     
     }
@@ -90,7 +102,15 @@ echo "<!DOCTYPE HTML>
   </div>
     ".$result."
 </div>
+
+<footer>
+    <a href='index.php?stat=insert&input=".$input."&cpu_input=".$cpu_input."&outcome=".$outcome'>
+        <img border="0" alt="insert" src="images/insert.png" style="width:250px;height:250px;">
+    </a>
+</footer>
 </body>";
+
+
 
 
 

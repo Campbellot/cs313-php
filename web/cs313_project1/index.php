@@ -4,6 +4,26 @@ require("dbConnect.php");
 
 $db = get_db();
 $stat = $_GET['stat'];
+if($stat = "insert"){
+  $input = $_GET['input'];
+  $cpu_input = $_GET['cpu_input'];
+  $outcome = $_GET['outcome'];
+  switch($outcome){
+    case "win":
+      $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (TRUE, FALSE, ".$input.")");
+      $statement->execute();
+    break;
+    case "loss":
+      $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (FALSE, TRUE, ".$input.")");
+      $statement->execute();
+    break;
+    case "tie":
+      $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (FALSE, FALSE, ".$input.")");
+      $statement->execute();
+    break;
+  }
+
+}
 $game_id = array();
 $win = array();
 $loss = array();
@@ -121,9 +141,9 @@ foreach($result as $r){
 }
 
 $total_games = count($game_id);
-$win_percentage = (($wins/$total_games)*100)."%";
-$loss_percentage = (($losses/$total_games)*100)."%";
-$tie_percentage = (($ties/$total_games)*100)."%";
+$win_percentage = round((($wins/$total_games)*100))."%";
+$loss_percentage = round((($losses/$total_games)*100))."%";
+$tie_percentage = round((($ties/$total_games)*100))."%";
 
 echo "<table>
       <tr>

@@ -25,7 +25,7 @@ switch($input){
         case "scissors":
             $result = "<div><h1>You Win! </h1></div><div><a href='rps_index.html'><img border='0' alt='win' src='images/win.png' style='width:150px;height:250px;'></a></div>";
             $bod_class = "body2";
-            $outcome = "win"
+            $outcome = "win";
         break;    
 
     }
@@ -73,7 +73,7 @@ switch($input){
     break;
 }
 
-// $link = "index.php?stat=insert&input=".$input."&outcome=".$outcome;
+
 echo "<!DOCTYPE HTML>
 
 <html lang='en'>
@@ -103,7 +103,11 @@ echo "<!DOCTYPE HTML>
     ".$result."
 </div>
 
-
+<footer>
+    <a href='index.php?stat=insert&input=".$input."&outcome=".$outcome."'>
+        <img border='0' alt='insert' src='images/insert.png' style='width:250px;height:250px;'>
+    </a>
+</footer>
 </body>";
 
 

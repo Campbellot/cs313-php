@@ -8,8 +8,6 @@ $game_id = "";
 $win = "";
 $loss = "";
 $input = "";
-$result = array();
-$i = 0;
 
 try
 {
@@ -20,12 +18,10 @@ try
   
 	while ($row = $statement->fetch())
 	{
-    $result[$i] = (object)(
-        "game_id" => $row['game_id'];
-        "win" => (($row['win']) ? TRUE : FALSE);
-        "loss" => (($row['loss']) ? TRUE : FALSE);
-        "input" => $row['input']);
-    $i++;
+        $game_id = $row['game_id'];
+        $win = (($row['win']) ? TRUE : FALSE);
+        $loss = (($row['loss']) ? TRUE : FALSE);
+        $input = $row['input'];
 	}
 }
 catch (PDOException $ex)
@@ -33,4 +29,7 @@ catch (PDOException $ex)
 	echo "Error connecting to DB. Details: $ex";
 	die();
 }
-var_dump($result);
+echo $game_id."\n";
+echo $win."\n";
+echo $loss."\n";
+echo $input."\n";

@@ -4,26 +4,26 @@ require("dbConnect.php");
 
 $db = get_db();
 $stat = $_GET['stat'];
-if($stat = "insert"){
-  $input = $_GET['input'];
+// if($stat = "insert"){
+//   $input = $_GET['input'];
   
-  $outcome = $_GET['outcome'];
-  switch($outcome){
-    case "win":
-      $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (TRUE, FALSE, ".$input.")");
-      $statement->execute();
-    break;
-    case "loss":
-      $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (FALSE, TRUE, ".$input.")");
-      $statement->execute();
-    break;
-    case "tie":
-      $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (FALSE, FALSE, ".$input.")");
-      $statement->execute();
-    break;
-  }
+//   $outcome = $_GET['outcome'];
+//   switch($outcome){
+//     case "win":
+//       $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (TRUE, FALSE, ".$input.")");
+//       $statement->execute();
+//     break;
+//     case "loss":
+//       $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (FALSE, TRUE, ".$input.")");
+//       $statement->execute();
+//     break;
+//     case "tie":
+//       $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (FALSE, FALSE, ".$input.")");
+//       $statement->execute();
+//     break;
+//   }
 
-}
+// }
 $game_id = array();
 $win = array();
 $loss = array();

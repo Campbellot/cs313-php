@@ -103,11 +103,7 @@ echo "<!DOCTYPE HTML>
     ".$result."
 </div>
 
-<div>
-    <a href='".$link."'>
-        <img border='0' alt='insert' src='images/insert.png' style='width:250px;height:250px;'>
-    </a>
-</div>
+
 </body>";
 
 

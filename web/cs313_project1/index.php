@@ -3,12 +3,13 @@
 require("dbConnect.php");
 
 $db = get_db();
-
+$stat = $_GET['stat'];
 $game_id = array();
 $win = array();
 $loss = array();
 $input = array();
 $i = 0;
+$result = array();
 
 try
 {
@@ -23,6 +24,13 @@ try
         $win[$i] = (($row['win']) ? TRUE : FALSE);
         $loss[$i] = (($row['loss']) ? TRUE : FALSE);
         $input[$i] = $row['input'];
+        
+        $result[$i] = array(
+          "game_id" => $game_id[$i],
+          "win" => $win[$i],
+          "loss" => $loss[$i],
+          "input" => $input[$i]
+        );
         $i++;
 	}
 }
@@ -31,7 +39,97 @@ catch (PDOException $ex)
 	echo "Error connecting to DB. Details: $ex";
 	die();
 }
-var_dump ($game_id);
-var_dump ($win);
-var_dump ($loss);
-var_dump ($input);
+$wins = 0;
+$losses = 0;
+$ties = 0;
+foreach($result as $r){
+
+  switch($stat){
+    case "rock":
+      if($r["input"] == "rock"){
+        if($r["win"] == TRUE){
+          $win++;
+        }
+        if($r["loss"] == TRUE){
+          $losses++;
+        }
+        if($r["win"] == FALSE && $r["loss"] == FALSE){
+          $ties++;
+        }
+
+      }
+      if($r["input"] == "paper"){
+        if($r["win"] == TRUE){
+          $losses++;
+        }
+      }
+      if($r["input"] == "scissors"){
+        if($r["loss"] == TRUE){
+          $wins++;
+        }
+      }
+    break;
+    
+    case "paper":
+      if($r["input"] == "paper"){
+        if($r["win"] == TRUE){
+          $wins++;
+        }
+        if($r["loss"] == TRUE){
+          $losses++;
+        }
+        if($r["win"] == FALSE && $r["loss"] == FALSE){
+            $ties++;
+        }
+      }
+      if($r["input"] == "rock"){
+        if($r["loss"] == TRUE){
+          $wins++;
+        }
+      }
+      if($r["input"] == "scissors"){
+          if($r["win"] == TRUE){
+            $losses++;
+          }
+      }
+    break;
+    
+    case "scissors":
+      if($r["input"] == "rock"){
+        if($r["win"] == TRUE){
+          $losses++;
+        }
+      }
+      if($r["input"] == "paper"){
+        if($r["loss"] == TRUE){
+          $wins++;
+        }
+      }
+      if($r["input"] == "scissors"){
+        if($r["win"] == TRUE){
+          $wins++;
+        }
+        if($r["loss"] == TRUE){
+          $losses++;
+        }
+        if($r["win"] == FALSE && $r["loss"] == FALSE){
+          $ties++;
+        }        
+      }
+    break;
+  }
+}
+
+$total_games = count($game_id);
+$win_percentage = (($wins/$total_games)*100)."%";
+$loss_percentage = (($losses/$total_games)*100)."%";
+$tie_percentage = (($ties/$total_games)*100)."%";
+
+echo "<table>
+      <tr>
+        <th>Wins</th><th>Losses</th><th>Ties</th>
+      </tr>
+      <tr>
+        <td>".$win_percentage."</td><td>".$loss_percentage."</td><td>".$tie_percentage."</td>
+      </tr>
+      </table>";

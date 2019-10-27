@@ -4,20 +4,34 @@ function insertDB($input, $outcome){
     require("dbConnect.php");
 
     $db = get_db();
-    switch($outcome){
-        case "win":
-            $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (TRUE, FALSE, ".$input.")");
-            $statement->execute();
-        break;
-        case "loss":
-            $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (FALSE, TRUE, ".$input.")");
-            $statement->execute();
-        break;
-        case "tie":
-            $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (FALSE, FALSE, ".$input.")");
-            $statement->execute();
-        break;
-  }
+    try{
+        switch($outcome){
+            case "win":
+                $query = 'INSERT INTO results (win, loss, input) VALUES(TRUE, FALSE, :input)';
+                $statement = $db->prepare($query);
+                $statement->bindValue(':input', $input);
+                $statement->execute();
+            break;
+            case "loss":
+                $query = 'INSERT INTO results (win, loss, input) VALUES(FALSE, TRUE, :input)';
+                $statement = $db->prepare($query);
+                $statement->bindValue(':input', $input);
+                $statement->execute();
+            break;
+            case "tie":
+                $query = 'INSERT INTO results (win, loss, input) VALUES(FALSE, FALSE, :input)';
+                $statement = $db->prepare($query);
+                $statement->bindValue(':input', $input);
+                $statement->execute();
+            break;
+        }
+    }
+    catch (Exception $ex) {
+        echo "Error with DB. Details: $ex";
+        die();
+    }
+    header("Location: rps_index.html");
+    die();
 
 }
 

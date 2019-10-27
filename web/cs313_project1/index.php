@@ -4,10 +4,11 @@ require("dbConnect.php");
 
 $db = get_db();
 
-$game_id = "";
-$win = "";
-$loss = "";
-$input = "";
+$game_id = array();
+$win = array();
+$loss = array();
+$input = array();
+$i = 0;
 
 try
 {
@@ -18,10 +19,11 @@ try
   
 	while ($row = $statement->fetch())
 	{
-        $game_id = $row['game_id'];
-        $win = (($row['win']) ? TRUE : FALSE);
-        $loss = (($row['loss']) ? TRUE : FALSE);
-        $input = $row['input'];
+        $game_id[$i] = $row['game_id'];
+        $win[$i] = (($row['win']) ? TRUE : FALSE);
+        $loss[$i] = (($row['loss']) ? TRUE : FALSE);
+        $input[$i] = $row['input'];
+        $i++;
 	}
 }
 catch (PDOException $ex)
@@ -29,7 +31,7 @@ catch (PDOException $ex)
 	echo "Error connecting to DB. Details: $ex";
 	die();
 }
-echo $game_id."\n";
-echo $win."\n";
-echo $loss."\n";
-echo $input."\n";
+var_dump ($game_id);
+var_dump ($win);
+var_dump ($loss);
+var_dump ($input);

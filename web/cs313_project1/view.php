@@ -1,5 +1,26 @@
 <?php
 
+function insertDB($input, $outcome){
+    require("dbConnect.php");
+
+    $db = get_db();
+    switch($outcome){
+        case "win":
+            $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (TRUE, FALSE, ".$input.")");
+            $statement->execute();
+        break;
+        case "loss":
+            $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (FALSE, TRUE, ".$input.")");
+            $statement->execute();
+        break;
+        case "tie":
+            $statement = $db->prepare("INSERT INTO results (win, loss, input) VALUES (FALSE, FALSE, ".$input.")");
+            $statement->execute();
+        break;
+  }
+
+}
+
 $input = $_GET['input'];
 $opts = array('rock', 'paper', 'scissors');
 $key = array_rand($opts, 1);
@@ -104,9 +125,7 @@ echo "<!DOCTYPE HTML>
 </div>
 
 <footer>
-    <a href='index.php?stat=insert&input=".$input."&outcome=".$outcome."'>
-        <img border='0' alt='insert' src='images/insert.png' style='width:250px;height:250px;'>
-    </a>
+    <button onclick=".$this->insertDB($input, $outcome).">Submit Results</button>     
 </footer>
 </body>";
 

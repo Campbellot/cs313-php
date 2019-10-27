@@ -20,11 +20,12 @@ try
   
 	while ($row = $statement->fetch())
 	{
-    $result[$i] = (object)array(
+    $result[$i] = (object)(
         "game_id" => $row['game_id'];
         "win" => (($row['win']) ? TRUE : FALSE);
         "loss" => (($row['loss']) ? TRUE : FALSE);
         "input" => $row['input']);
+    $i++;
 	}
 }
 catch (PDOException $ex)

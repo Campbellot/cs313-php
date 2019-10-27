@@ -6,7 +6,7 @@ $db = get_db();
 $stat = $_GET['stat'];
 if($stat = "insert"){
   $input = $_GET['input'];
-  $cpu_input = $_GET['cpu_input'];
+  
   $outcome = $_GET['outcome'];
   switch($outcome){
     case "win":

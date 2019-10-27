@@ -73,7 +73,7 @@ switch($input){
     break;
 }
 
-
+$link = "index.php?stat=insert&input=".$input."&outcome=".$outcome;
 echo "<!DOCTYPE HTML>
 
 <html lang='en'>
@@ -103,11 +103,11 @@ echo "<!DOCTYPE HTML>
     ".$result."
 </div>
 
-<footer>
-    <a href='index.php?stat=insert&input=".$input."&cpu_input=".$cpu_input."&outcome=".$outcome."'>
+<div>
+    <a href='".$link."'>
         <img border='0' alt='insert' src='images/insert.png' style='width:250px;height:250px;'>
     </a>
-</footer>
+</div>
 </body>";
 
 
